@@ -6,7 +6,9 @@
         <el-aside width="220px">
           <navmenu></navmenu>
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main>
+          <homeindex></homeindex>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -14,11 +16,12 @@
 
 <script>
   import NavMenu from '@/components/config/NavMenu'
-
+import HomeIndex from '@/components/home/HomeIndex'
   export default {
     name: 'app',
     components: {
-      'navmenu': NavMenu
+      'navmenu': NavMenu,
+      'homeindex':HomeIndex
     }
   }
 
