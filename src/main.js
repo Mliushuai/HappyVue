@@ -9,11 +9,11 @@ import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import './style/element-variables.scss'
 
-
-require('./mock')//此部分引入的是我们所编写的mockjs文档
+//此部分引入的是我们所编写的mockjs文档
+require('./mock')
 Vue.prototype.$axios = axios;
-Vue.use(ElementUI, {locale})
-Vue.config.productionTip = false
+Vue.use(ElementUI, {locale});
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
