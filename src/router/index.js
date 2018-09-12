@@ -1,31 +1,20 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HomeIndex from '@/components/home/HomeIndex'
-import Login from '@/components/Login/Login'
-import AboutUs from '@/components/page/AboutUs'
-import FirstIndex from '@/components/page/HomeIndex'
-import SetStating from '@/components/page/SetStating'
+import VueRouter from 'vue-router'
+import homeindex from '@/components/page/HomeIndex'
+import aboutus from '@/components/page/AboutUs'
+import setstate from '@/components/page/SetStating'
+Vue.use(VueRouter)
 
-Vue.use(Router)
-
-export default new Router({
+export default new VueRouter({
   routes: [
     {
-      path: '/',
-      name: 'HomeIndex',
-      components: HomeIndex
-    },{
-      path: 'FirstIndex',
-      name: 'FirstIndex',
-      components: FirstIndex
-    },{
-      path: 'AboutUs',
-      name: 'AboutUs',
-      components: AboutUs
-    },{
-    path:'SetStating',
-      name:'SetStating',
-      components:SetStating
+      path: '/homeindex',
+      name: 'homeindex',
+      component: homeindex
+    }, {
+      path: '/aboutus',
+      name: 'aboutus',
+      component: aboutus
     }
   ]
 })

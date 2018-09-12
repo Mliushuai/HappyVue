@@ -1,5 +1,7 @@
 <template>
-    
+    <div>
+      10000
+    </div>
 </template>
 
 <script>

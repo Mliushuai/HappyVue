@@ -5,4 +5,9 @@ Mock.mock('/api/data', (req, res) => {
   return {
     data: ['a','b']
   }
-})
+});
+Mock.mock('/api/post', (req, res) => {
+  return {
+    data: ['a','b']
+  }
+});

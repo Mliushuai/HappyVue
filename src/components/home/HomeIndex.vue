@@ -1,8 +1,11 @@
 <template>
   <div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
     <ul>
       <li v-for="(item,key) in data">
-        {{item}}
+        <span>{{item}}</span>
       </li>
     </ul>
   </div>
@@ -13,15 +16,33 @@
     name: "HomeIndex",
     data() {
       return {
-        data: []
+        data: [],
       }
     },
     mounted: function () {
-      this.$axios.get('/api/data').then(res => {
-        this.data = res.data
-        console.log('res===>', res)
-      })
-    }
+      this.changGet();
+      this.changePost();
+    },
+    methods: {
+      /**
+       * 测试接通mock
+       */
+      changGet() {
+        this.$axios.get('/api/data').then(res => {
+          console.log('res===>', res);
+          this.data = res.data
+        })
+      },
+      /**
+       * 测试Mock post
+       */
+      changePost() {
+        this.$axios.post('/api/post').then(res => {
+          console.log(`mockPost ===> `, res)
+        })
+      }
+    },
+
   }
 </script>
 

@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header>
-        <headerindex>-</headerindex>
+        <headerindex></headerindex>
       </el-header>
       <el-container>
         <el-aside width="220px">
