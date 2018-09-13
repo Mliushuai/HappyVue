@@ -4,13 +4,23 @@ import homeindex from '@/components/page/HomeIndex'
 import aboutus from '@/components/page/AboutUs'
 import setstate from '@/components/page/SetStating'
 import fontend from '@/components/page/FontEnd'
+import changPage from '@/components/page/changPage/changPage'
 import router from '@/common/data/data'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [
-    {path: '/homeindex', component: homeindex, name: 'homeindex', class: 'fa-line-chart'},
+    {
+      path: '/homeindex',
+      component: homeindex,
+      name: 'homeindex',
+      children: [
+        {
+          path:'changpage',
+          component:changPage,
+        }
+      ]},
     {path: '/aboutus', component: aboutus, name: 'aboutus', class: 'fa-table'},
     {path: '/setstate', component: setstate, name: 'setstate', class: 'fa-newspaper-o'},
     {path: '/fontend', component: fontend, name: 'fontend', class: 'fa-newspaper-o'},

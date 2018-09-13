@@ -21,6 +21,7 @@
   import NavMenu from '@/components/config/NavMenu'
   import HeaderIndex from '@/components/config/HeaderIndex'
   import FooterIndex from '@/components/config/FooterIndex'
+  import '@/common/style/Reset.css'
   export default {
     name: 'app',
     components: {
