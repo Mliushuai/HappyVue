@@ -1,48 +1,46 @@
 <template>
   <div>
     <el-menu
-      :default-active="'1'"
-      class="el-menu-demo nav-bar"
+      :default-active="$route.path"
+      class="el-menu-demo"
       mode="horizontal"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
+      light router
     >
-      <el-menu-item index="1">
-        <router-link
-          :to="{ name : 'homeindex' }"
-          style="display: block;text-decoration: none">处理中心
-        </router-link>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <router-link :to="{ name : 'aboutus' }" style="display: block;text-decoration: none">消息中心</router-link>
-      </el-menu-item>
-      <el-menu-item index="3" style="display: block;text-decoration: brown">订单管理</el-menu-item>
+      <template
+        v-for="(item,index) in $router.options.routes" v-if="!item.hidden"
+      >
+        <el-menu-item :index="item.path">
+          <router-link :to="item.path">
+            <i class="fa" :class="item.class"></i>{{item.name}}
+          </router-link>
+        </el-menu-item>
+      </template>
     </el-menu>
   </div>
 
 </template>
 
 <script>
-  import navData from '@/common/data/data'
-
   export default {
     name: "NavMenu",
     /**
      * data 实例化数据
      * @returns {{navData: *[]}}
      */
-    data(){
-      return{
-        navData:[]
+    data() {
+      return {
+        nav: [],
+        navIndex: 0,
       }
     },
     /**
      * mounted 钩子函数 实力化时 渲染组件数据
      */
     mounted: function () {
-      this.changGet()
-      console.log(`navData===>???`, navData)
+      this.changGet();
     },
     /**
      * vue 中函数操作方式
@@ -53,19 +51,38 @@
        */
       changGet() {
         this.$axios.get('/api/data').then(res => {
-          console.log('res===>', res.data.data);
-          this.navData =res.data.data
+          this.nav = res.data.data
         })
       },
+      gotoAddress(path, index) {
+        this.navIndex = index;
+        // 路由跳转
+        this.$router.push(path)
+      },
+      /**
+       * 检索当前路径
+       * @param path
+       */
+      checkRouterLocal(path) {
+        // 查找当前路由下标高亮
+        this.navIndex = this.nav.findIndex(item => item.path === path);
+      }
+    },
+    beforeCreate() {
+      if (this.$route.path === '/') {
+        this.$router.push({path: '/homeindex'})
+      }
+    },
+    watch: {
+      "$route"() {
+        // 获取当前路径
+        let path = this.$route.path;
+        // 检索当前路径
+        this.checkRouterLocal(path);
+      }
     },
   }
 </script>
-<style lang="scss" scoped="" type="text/css">
-  $nav-color: #F90;
-  .nav-bar {
-    display: flex;
-    $width: 100%;
-    width: $width;
-    color: $nav-color;
-  }
+<style>
+
 </style>

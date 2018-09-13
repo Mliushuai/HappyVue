@@ -3,18 +3,26 @@ import VueRouter from 'vue-router'
 import homeindex from '@/components/page/HomeIndex'
 import aboutus from '@/components/page/AboutUs'
 import setstate from '@/components/page/SetStating'
+import fontend from '@/components/page/FontEnd'
+import router from '@/common/data/data'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [
-    {
-      path: '/homeindex',
-      name: 'homeindex',
-      component: homeindex
-    }, {
-      path: '/aboutus',
-      name: 'aboutus',
-      component: aboutus
-    }
+    {path: '/homeindex', component: homeindex, name: 'homeindex', class: 'fa-line-chart'},
+    {path: '/aboutus', component: aboutus, name: 'aboutus', class: 'fa-table'},
+    {path: '/setstate', component: setstate, name: 'setstate', class: 'fa-newspaper-o'},
+    {path: '/fontend', component: fontend, name: 'fontend', class: 'fa-newspaper-o'},
+    // {
+    //   path: '/homeindex',
+    //   component: homeindex,
+    //   children: [
+    //     {path: '/homeindex', component: homeindex, name: 'homeindex', class: 'fa-line-chart'},
+    //     {path: '/aboutus', component: aboutus, name: 'aboutus', class: 'fa-table'},
+    //     {path: '/setstate', component: setstate, name: 'setstate', class: 'fa-newspaper-o'},
+    //     {path: '/fontend', component: fontend, name: 'fontend', class: 'fa-newspaper-o'},
+    //   ]
+    // }
   ]
 })

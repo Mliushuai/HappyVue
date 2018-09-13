@@ -2,11 +2,14 @@
   <div id="app">
     <el-container>
       <el-header>
+        <headerindex></headerindex>
         <navmenu></navmenu>
       </el-header>
       <el-main>
         <div class="content">
-          <router-view></router-view>
+          <div>
+            <router-view></router-view>
+          </div>
         </div>
       </el-main>
       <el-footer>Footer</el-footer>

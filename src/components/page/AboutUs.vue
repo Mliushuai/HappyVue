@@ -1,6 +1,6 @@
 <template>
     <div>
-      10000
+      10086
     </div>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>

@@ -51,6 +51,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        include: '/src/',
         loaders: ["style", "css", "sass"]
       },
       {

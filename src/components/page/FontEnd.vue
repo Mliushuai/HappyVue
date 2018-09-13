@@ -1,12 +1,12 @@
 <template>
- <div>
-   20000000000
- </div>
+    <div>
+      1000
+    </div>
 </template>
 
 <script>
     export default {
-        name: "SetStating"
+        name: "FontEnd"
     }
 </script>
 
