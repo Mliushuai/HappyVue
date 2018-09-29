@@ -65,6 +65,7 @@
        */
       checkRouterLocal(path) {
         // 查找当前路由下标高亮
+        console.log(path)
         this.navIndex = this.nav.findIndex(item => item.path === path);
       }
     },
