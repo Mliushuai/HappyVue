@@ -1,3 +1,4 @@
+<script src="../../../build/check-versions.js"></script>
 <template>
   <div>
     home
@@ -12,6 +13,10 @@
     <componentA :dataA="dataA"></componentA>
     <span v-bind:class="classStr">400</span>
     <span v-bind:class="classNames">404</span>
+    <p v-if="isPartA">10086</p>
+    <p v-else>10010</p>
+    <p v-show="!isPartA">isPartB</p>
+    <button @click="toggle">toggle</button>
     <router-view></router-view>
   </div>
 </template>
@@ -29,6 +34,7 @@
           'blue-font': false
         },
         classStr: 'red-font',
+        isPartA:false,
         dataA: 'dataA',
         Link: "http://www.baidu.com",
         list: [
@@ -43,6 +49,9 @@
         if (this.list.length > 4) {
           this.list.push({name: "ufp", age: '80'})
         }
+      },
+      toggle(){
+        this.isPartA = !this.isPartA
       }
     }
   }
