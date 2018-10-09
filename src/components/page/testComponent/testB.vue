@@ -5,7 +5,9 @@
     {{myValueWidtnNum}}
     <input type="text" v-model="myVlaue"><br>
     1000
-    <input v-model="val" />1111
+    <input v-model="val"/>
+    <br>
+    {{getMyvalWitchnum()}}
   </div>
 </template>
 
@@ -16,12 +18,12 @@
       return {
         dataNun: 10,
         myVlaue: '10086',
-        val:'404'
+        val: '404'
       }
     },
     watch: {
       val(val, oldVal) {
-        console.log(val+"val"+'/n'+ oldVal)
+        console.log(val + "val" + '/n' + oldVal)
       }
     },
     computed: {
@@ -29,11 +31,16 @@
         let myName = this.myVlaue.replace(/\d/g, '')
         console.log(myName)
         return (
-          this.myVlaue.replace(/\d/g, '') + '400-123-123'
+          Date.now()
         )
-
       }
-    }
+    },
+    methods: {
+      getMyvalWitchnum() {
+        return this.myVlaue.replace(/\d/g, '')
+      }
+    },
+
   }
 </script>
 
