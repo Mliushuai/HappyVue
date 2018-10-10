@@ -12,6 +12,10 @@ Vue.use(VueRouter)
 export default new VueRouter({
   mode: 'history',
   routes: [
+    // {
+    //   path:'/',
+    //   redirect:'/homeindex',
+    // },
     {
       path: '/homeindex',
       component: homeindex,

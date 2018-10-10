@@ -1,4 +1,4 @@
-<script src="../../../build/check-versions.js"></script>
+<!--<script src="../../../build/check-versions.js"></script>-->
 <template>
   <div>
     home
@@ -17,6 +17,7 @@
     <p v-else>10010</p>
     <p v-show="!isPartA">isPartB</p>
     <button @click="toggle">toggle</button>
+    <button @click="getParam">getParam</button>
     <router-view></router-view>
   </div>
 </template>
@@ -52,8 +53,11 @@
       },
       toggle() {
         this.isPartA = !this.isPartA
+      },
+      getParam(){
+        console.log(this.$route.params)
       }
-    }
+    } 
   }
 </script>
 

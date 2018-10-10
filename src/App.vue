@@ -8,10 +8,17 @@
       <el-main>
         <div class="content">
           <div>
-            <router-view></router-view>
+            <transition name="fade" mode="out-in">
+              <keep-alive>
+                <router-view></router-view>
+              </keep-alive>
+            </transition>
           </div>
         </div>
       </el-main>
+      <div class="showMin">
+        {{totalPrice}}
+      </div>
       <el-footer>Footer</el-footer>
     </el-container>
   </div>
@@ -22,17 +29,43 @@
   import HeaderIndex from '@/components/config/HeaderIndex'
   import FooterIndex from '@/components/config/FooterIndex'
   import '@/common/style/Reset.css'
+
   export default {
     name: 'app',
     components: {
       'navmenu': NavMenu,
-      'headerindex':HeaderIndex,
+      'headerindex': HeaderIndex,
       'footerindex': FooterIndex,
+    },
+    computed: {
+      totalPrice() {
+        if(this.$store.state.totalPrice <0){
+          alert("不能再减了")
+          return this.$store.state.totalPrice=0
+        }
+        return this.$store.state.totalPrice
+      }
     }
   }
 
 </script>
 
 <style>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s ease-out;
+  }
 
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
+  }
+
+  .showMin {
+    width: 200px;
+    height: 80px;
+    font-size: 20px;
+    line-height: 80px;
+    text-align: center;
+    background-color: darkgray;
+
+  }
 </style>

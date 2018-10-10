@@ -1,15 +1,23 @@
 <template>
   <div>
-    <TestB></TestB>
-    20000000000
+    <div>总价合计：{{totalPrice}}</div>
+    <Apple></Apple>
+    <Banana></Banana>
   </div>
 </template>
 
 <script>
-  import TestB from '@/components/page/testComponent/testB'
+  import Apple from '@/components/shopCar/Apple'
+  import Banana from '@/components/shopCar/Banana'
+
   export default {
-    components:{TestB},
-    name: "SetStating"
+    components: {Apple, Banana},
+    name: "SetStating",
+    computed: {
+      totalPrice() {
+        return this.$store.state.totalPrice
+      }
+    },
   }
 </script>
 
