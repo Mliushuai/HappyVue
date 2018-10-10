@@ -34,7 +34,7 @@
           'blue-font': false
         },
         classStr: 'red-font',
-        isPartA:false,
+        isPartA: false,
         dataA: 'dataA',
         Link: "http://www.baidu.com",
         list: [
@@ -50,7 +50,7 @@
           this.list.push({name: "ufp", age: '80'})
         }
       },
-      toggle(){
+      toggle() {
         this.isPartA = !this.isPartA
       }
     }

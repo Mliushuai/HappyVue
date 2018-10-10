@@ -19,7 +19,7 @@
       <select v-model="selections">
         <option v-for="(item) in selectOption" :value="item.value">{{item.name}}</option>
       </select>
-<p>{{selections}}</p>
+      <p>{{selections}}</p>
       <input v-model.lazy="inputValues"/><span>{{inputValues}}</span><br>
       <input v-model.trim="inputValues"/><span>{{inputValues}}</span>
     </form>
@@ -36,16 +36,16 @@
     },
     data() {
       return {
-        inputValues:"77777",
-        selections:[],
-        selectOption:[
-          {name:"lily",value:1},
-          {name:"wang",value:26},
+        inputValues: "77777",
+        selections: [],
+        selectOption: [
+          {name: "lily", value: 1},
+          {name: "wang", value: 26},
         ],
         msg: "this is data ",
         joinUs: "10000",
-        MyBox:[],
-        OnSlect:[]
+        MyBox: [],
+        OnSlect: []
       }
     },
     methods: {

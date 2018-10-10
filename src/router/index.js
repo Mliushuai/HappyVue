@@ -10,6 +10,7 @@ import router from '@/common/data/data'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/homeindex',
@@ -17,13 +18,29 @@ export default new VueRouter({
       name: 'homeindex',
       children: [
         {
-          path:'changpage',
-          component:changPage,
+          path: 'changpage',
+          component: changPage,
         }
-      ]},
-    {path: '/aboutus', component: aboutus, name: 'aboutus', class: 'fa-table'},
-    {path: '/setstate', component: setstate, name: 'setstate', class: 'fa-newspaper-o'},
-    {path: '/fontend', component: fontend, name: 'fontend', class: 'fa-newspaper-o'},
+      ]
+    },
+    {
+      path: '/aboutus',
+      component: aboutus,
+      name: 'aboutus',
+      class: 'fa-table'
+    },
+    {
+      path: '/setstate',
+      component: setstate,
+      name: 'setstate',
+      class: 'fa-newspaper-o'
+    },
+    {
+      path: '/fontend',
+      component: fontend,
+      name: 'fontend',
+      class: 'fa-newspaper-o'
+    },
     // {
     //   path: '/homeindex',
     //   component: homeindex,
