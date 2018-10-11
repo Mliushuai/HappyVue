@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <el-container>
+      <el-date-picker
+        v-model="value1"
+        type="datetime"
+        placeholder="选择日期时间">
+      </el-date-picker>
       <el-header>
         <headerindex></headerindex>
         <navmenu></navmenu>
@@ -39,6 +44,11 @@
       'navmenu': NavMenu,
       'headerindex': HeaderIndex,
       'footerindex': FooterIndex,
+    },
+    data(){
+      return{
+        value1:""
+      }
     },
     //computed 计算属性
     computed: {
