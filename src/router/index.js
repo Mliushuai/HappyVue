@@ -12,10 +12,6 @@ Vue.use(VueRouter)
 export default new VueRouter({
   mode: 'history',
   routes: [
-    // {
-    //   path:'/',
-    //   redirect:'/homeindex',
-    // },
     {
       path: '/homeindex',
       component: homeindex,
@@ -45,15 +41,5 @@ export default new VueRouter({
       name: 'fontend',
       class: 'fa-newspaper-o'
     },
-    // {
-    //   path: '/homeindex',
-    //   component: homeindex,
-    //   children: [
-    //     {path: '/homeindex', component: homeindex, name: 'homeindex', class: 'fa-line-chart'},
-    //     {path: '/aboutus', component: aboutus, name: 'aboutus', class: 'fa-table'},
-    //     {path: '/setstate', component: setstate, name: 'setstate', class: 'fa-newspaper-o'},
-    //     {path: '/fontend', component: fontend, name: 'fontend', class: 'fa-newspaper-o'},
-    //   ]
-    // }
   ]
 })
