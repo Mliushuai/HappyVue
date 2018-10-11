@@ -19,7 +19,10 @@
       <div class="showMin">
         {{totalPrice}}
       </div>
-      <el-footer>Footer</el-footer>
+      <el-footer>
+        Footer
+        <p>{{newTotalPrice}}</p>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -37,11 +40,16 @@
       'headerindex': HeaderIndex,
       'footerindex': FooterIndex,
     },
+    //computed 计算属性
     computed: {
+      newTotalPrice() {
+        //使用 getters 获取 store 中的state数据
+        return this.$store.getters.getTotal
+      },
       totalPrice() {
-        if(this.$store.state.totalPrice <0){
+        if (this.$store.state.totalPrice < 0) {
           alert("不能再减了")
-          return this.$store.state.totalPrice=0
+          return this.$store.state.totalPrice = 0
         }
         return this.$store.state.totalPrice
       }

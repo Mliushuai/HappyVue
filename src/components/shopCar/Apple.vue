@@ -15,9 +15,16 @@
       }
     },
     methods: {
+      /**
+       * addOne 采用接收action方式进行触发更新
+       */
       addOne() {
-        this.$store.commit('increment',this.price)
+        // this.$store.commit('increment',this.price)
+        this.$store.dispatch('increase',this.price)
       },
+      /**
+       * minusOne 采用mutations方式进行触发更新
+       */
       minusOne() {
         this.$store.commit('decrement',this.price)
       }
@@ -25,6 +32,3 @@
   }
 </script>
 
-<style scoped>
-
-</style>
