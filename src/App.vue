@@ -12,6 +12,7 @@
         </div>
         <div>
           现在是testMins的分支内容
+          <span>当前是在testMins上修改的内容</span>
         </div>
         <headerindex></headerindex>
         <navmenu></navmenu>
