@@ -8,11 +8,8 @@
       </el-date-picker>
       <el-header>
         <div>
-          testMin
+          现在是testMins的分支内容
         </div>
-        <span>
-          ooolllll
-        </span>
         <headerindex></headerindex>
         <navmenu></navmenu>
       </el-header>
