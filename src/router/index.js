@@ -5,7 +5,10 @@ import aboutus from '@/components/page/AboutUs'
 import setstate from '@/components/page/SetStating'
 import fontend from '@/components/page/FontEnd'
 import changPage from '@/components/page/changPage/changPage'
-import router from '@/common/data/data'
+import shopCar from '@/components/shopCar/shopCar'
+import CheckShopCar from '@/components/shopCar/CheckShopCar'
+// import BestShopCard from '@/components/shopCard/BestShoppingCard'
+// import router from '@/common/data/data'
 
 Vue.use(VueRouter)
 
@@ -40,6 +43,19 @@ export default new VueRouter({
       component: fontend,
       name: 'fontend',
       class: 'fa-newspaper-o'
+    }, {
+      path: '/shopCar',
+      name: 'shopCar',
+      component: shopCar
+    }, {
+      path: '/CheckShopCar',
+      name: "CheckShopCar",
+      component: CheckShopCar
     },
+    // {
+    //   path: '/BestShoppingCard',
+    //   name: 'BestShoppingCard',
+    //   component: BestShopCard
+    // }
   ]
 })
