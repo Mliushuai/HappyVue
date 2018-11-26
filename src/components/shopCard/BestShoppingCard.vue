@@ -3,6 +3,9 @@
   <div class="container">
     <span>在master上修改的内容</span>
     <p>购物清单</p>
+    <p>
+      其他人修改的内容
+    </p>
     <div id="app">
       <table class="table">
         <tr>
