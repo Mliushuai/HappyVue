@@ -7,14 +7,8 @@
         placeholder="选择日期时间">
       </el-date-picker>
       <el-header>
-        <div>zheshixiugai
-        <span>这是TestMin分支的内容</span>
-        </div>
-        <div>
-          testMin
-        </div>
         <span>
-          ooolllll
+          演示更新sss
         </span>
         <headerindex></headerindex>
         <navmenu></navmenu>
