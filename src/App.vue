@@ -7,6 +7,12 @@
         placeholder="选择日期时间">
       </el-date-picker>
       <el-header>
+        <div>
+          testMin
+        </div>
+        <span>
+          ooolllll
+        </span>
         <headerindex></headerindex>
         <navmenu></navmenu>
       </el-header>
