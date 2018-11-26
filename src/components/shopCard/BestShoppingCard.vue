@@ -1,6 +1,7 @@
 <template>
 
   <div class="container">
+    <span>在master上修改的内容</span>
     <p>购物清单</p>
     <div id="app">
       <table class="table">
